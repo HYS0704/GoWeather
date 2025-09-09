@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>天氣查詢</title>
+</head>
+<body>
+  <h1>天氣查詢系統</h1>
+  <form method="POST" action="/weather">
+    <input type="text" name="city" placeholder="輸入城市名稱 (例: Taipei,tw)" required>
+    <button type="submit">查詢</button>
+  </form>
+
+  {{if .weather}}
+    <p><b>結果：</b> {{.weather}}</p>
+  {{end}}
+
+  {{if .error}}
+    <p style="color:red;"><b>錯誤：</b> {{.error}}</p>
+  {{end}}
+</body>
+</html>
